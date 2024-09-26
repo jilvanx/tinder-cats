@@ -1,4 +1,4 @@
-import { Box } from 'theme';
+import { Box } from './Box';
 
 export const Container = ({ children }: { children: React.ReactNode }) => {
   return (

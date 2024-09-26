@@ -6,16 +6,21 @@ type NamedStyles<T> = {
 };
 
 const palette = {
-  gray: '#808080',
-  blue: '#007AFF',
-  darkGray: '#38434D',
+  red: '#E16359',
+  green: '#6BD88E',
   white: '#FFFFFF',
-  black: '#000000',
-  purple: '#6366F1',
+  black: '#434141',
+  pink: '#EC537E',
+  pink2: '#FD267D',
+  gray1: '#BFBFC0',
+  gray2: '#E3E3E4',
 };
 
-const theme = createTheme({
+export const theme = createTheme({
   colors: {
+    backgroundColor: palette.white,
+    shadowColor: palette.gray1,
+    activeTab: palette.pink,
     ...palette,
   },
   spacing: {
@@ -26,27 +31,24 @@ const theme = createTheme({
     ml_24: 24,
     l_32: 32,
     xl_64: 64,
+    n_l_40: -40,
   },
   borderRadii: {
-    s_3: 3,
-    m_6: 6,
-    l_12: 12,
-    xl_24: 24,
+    xl_28: 28,
+    xxl_36: 36,
   },
   textVariants: {
     body: {
       fontSize: 16,
-    },
-    title: { fontSize: 20, fontWeight: 'bold' },
-    large: {
-      fontSize: 36,
-    },
-    extra_large: {
-      fontSize: 64,
-      fontWeight: 'bold',
+      lineHeight: 20,
     },
     defaults: {
-      // We can define a default text variant here.
+      fontSize: 16,
+      lineHeight: 20,
+    },
+    subTitle: {
+      fontSize: 8,
+      lineHeight: 10,
     },
   },
 });
@@ -64,4 +66,4 @@ export const makeStyles = <T extends NamedStyles<T> | NamedStyles<unknown>>(
 };
 
 export type Theme = typeof theme;
-export default theme;
+export type ThemeColors = keyof Theme['colors'];
