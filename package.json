@@ -11,11 +11,16 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/nunito-sans": "^0.2.3",
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^6.1.7",
     "@shopify/restyle": "^2.4.2",
+    "@tanstack/react-query": "^5.56.2",
     "expo": "^51.0.34",
+    "expo-app-loading": "^2.1.1",
     "expo-constants": "~16.0.1",
+    "expo-font": "~12.0.10",
+    "expo-image": "~1.13.0",
     "expo-linking": "~6.3.1",
     "expo-router": "~3.5.14",
     "expo-status-bar": "~1.12.1",

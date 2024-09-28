@@ -1,7 +1,7 @@
 import React from 'react';
 import { Svg, Path, Defs, RadialGradient, Stop } from 'react-native-svg';
 
-import { IconBase } from '@/components/icon/Icon';
+import { IconBase } from '@/components/Icon';
 import { theme } from '@/theme';
 
 export function TinderCatsIcon({ color = 'pink' }: IconBase) {
@@ -19,8 +19,8 @@ export function TinderCatsIcon({ color = 'pink' }: IconBase) {
           r="1"
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(6.50004 13.9589) scale(12.1085 13.9177)">
-          <Stop stopColor={color} />
-          <Stop offset="1" stopColor={theme.colors.pink2} />
+          <Stop stopColor={theme.colors[color]} />
+          <Stop offset="1" stopColor={theme.colors[color]} />
         </RadialGradient>
       </Defs>
     </Svg>

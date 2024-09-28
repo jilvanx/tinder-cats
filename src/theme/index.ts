@@ -1,3 +1,3 @@
-import { theme, useTheme, Theme, makeStyles, ThemeColors } from './theme';
+import { theme, useTheme, Theme, makeStyles, ThemeColors, getKeyColorByValue } from './theme';
 
-export { theme, useTheme, Theme, makeStyles, ThemeColors };
+export { theme, useTheme, Theme, makeStyles, ThemeColors, getKeyColorByValue };

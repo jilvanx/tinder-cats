@@ -1,15 +1,15 @@
 import { Tabs } from 'expo-router';
 import { SafeAreaView } from 'react-native';
 
-import { Icon } from '@/components/icon/Icon';
-import { theme, ThemeColors } from '@/theme';
+import { Icon } from '@/components/Icon';
+import { getKeyColorByValue, theme } from '@/theme';
 
 export default function TabLayout() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: theme.colors.activeTab,
+          tabBarActiveTintColor: theme.colors.pink,
           tabBarInactiveTintColor: theme.colors.black,
           tabBarStyle: {
             paddingVertical: theme.spacing.ml_24,
@@ -35,27 +35,33 @@ export default function TabLayout() {
           name="index"
           options={{
             headerShown: false,
-            // tabBarIconStyle: { marginT: 0 },
             title: '',
-            tabBarIcon: ({ color }) => <Icon name="cat" color={color as ThemeColors} />,
+            tabBarIcon: ({ color }) => {
+              const colorValue = getKeyColorByValue(color);
+              return <Icon name="cat" color={colorValue} />;
+            },
           }}
         />
         <Tabs.Screen
           name="two"
           options={{
             headerShown: false,
-            // tabBarIconStyle: { marginBottom: theme.spacing.n_l_40 },
             title: '',
-            tabBarIcon: ({ color }) => <Icon name="message-circle" color={color as ThemeColors} />,
+            tabBarIcon: ({ color }) => {
+              const colorValue = getKeyColorByValue(color);
+              return <Icon name="message-circle" color={colorValue} />;
+            },
           }}
         />
         <Tabs.Screen
           name="three"
           options={{
             headerShown: false,
-            // tabBarIconStyle: { marginBottom: theme.spacing.n_l_40 },
             title: '',
-            tabBarIcon: ({ color }) => <Icon name="user" color={color as ThemeColors} />,
+            tabBarIcon: ({ color }) => {
+              const colorValue = getKeyColorByValue(color);
+              return <Icon name="user" color={colorValue} />;
+            },
           }}
         />
       </Tabs>

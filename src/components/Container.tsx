@@ -1,8 +1,14 @@
 import { Box } from './Box';
 
-export const Container = ({ children }: { children: React.ReactNode }) => {
+import { ThemeSpacing } from '@/theme/theme';
+
+type ContainerProps = {
+  children: React.ReactNode;
+  spacing?: ThemeSpacing;
+};
+export const Container = ({ children, spacing = 'm_16' }: ContainerProps) => {
   return (
-    <Box flex={1} padding="ml_24">
+    <Box flex={1} padding={spacing}>
       {children}
     </Box>
   );

@@ -1,13 +1,15 @@
-import { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 
 import { Box } from './Box';
-import { Icon } from './icon/Icon';
+import { Icon } from './Icon';
 
 import { makeStyles, theme } from '@/theme';
 
-export const Switch = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
+type SwitchProps = {
+  value: boolean;
+  onValueChange: (value: boolean) => void;
+};
+export const Switch = ({ value, onValueChange }: SwitchProps) => {
   const styles = useStyles();
 
   return (
@@ -15,25 +17,25 @@ export const Switch = () => {
       <TouchableOpacity
         style={[
           styles.outter,
-          isEnabled
+          value
             ? { justifyContent: 'flex-end', backgroundColor: theme.colors.pink }
             : { justifyContent: 'flex-start' },
         ]}
         activeOpacity={0.8}
-        onPress={() => setIsEnabled(!isEnabled)}>
-        {isEnabled ? (
+        onPress={() => onValueChange(!value)}>
+        {value ? (
           <>
             <Box style={styles.innerOff} width={50} height={30}>
-              <Icon name="tinder-cats" color="gray2" />
+              <Icon name="tinder-cats" color="gray" />
             </Box>
             <Box style={styles.inner} width={50} height={30}>
-              <Icon name="star" />
+              <Icon name="star" color="pink" />
             </Box>
           </>
         ) : (
           <>
             <Box style={styles.inner} width={50} height={30}>
-              <Icon name="tinder-cats" />
+              <Icon name="tinder-cats" color="pink" />
             </Box>
             <Box style={styles.innerOff} width={50} height={30}>
               <Icon name="star" />

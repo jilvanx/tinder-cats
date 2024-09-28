@@ -1,21 +1,21 @@
 import { forwardRef } from 'react';
 import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
+import { Icon, IconName } from './Icon';
+
 import { makeStyles } from '@/theme';
 
 type ButtonProps = {
-  title?: string;
+  iconName: IconName;
 } & TouchableOpacityProps;
 
 export const Button = forwardRef<TouchableOpacity, ButtonProps>(
-  ({ title, ...touchableProps }, ref) => {
+  ({ iconName, ...touchableProps }, ref) => {
     const styles = useStyles();
 
     return (
       <TouchableOpacity ref={ref} {...touchableProps} style={[styles.button, touchableProps.style]}>
-        <Text variant="body" textAlign="center" color="white" fontWeight="600">
-          {title}
-        </Text>
+        <Icon name={iconName} />
       </TouchableOpacity>
     );
   }
@@ -23,9 +23,11 @@ export const Button = forwardRef<TouchableOpacity, ButtonProps>(
 
 const useStyles = makeStyles((theme) => ({
   button: {
+    width: 54,
+    height: 54,
     alignItems: 'center',
-    backgroundColor: theme.colors.purple,
-    borderRadius: theme.borderRadii.xl_24,
+    backgroundColor: theme.colors.white,
+    borderRadius: theme.borderRadii.xl_32,
     elevation: 5,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -36,6 +38,6 @@ const useStyles = makeStyles((theme) => ({
       width: 0,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowRadius: 3,
   },
 }));

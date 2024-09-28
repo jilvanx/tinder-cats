@@ -1,4 +1,6 @@
 import { CatIcon } from '@/assets/icons/CatIcon';
+import { CloseIcon } from '@/assets/icons/CloseIcon';
+import { HeartIcon } from '@/assets/icons/HeartIcon';
 import { MessageCircleIcon } from '@/assets/icons/MessageCircleIcon';
 import { StarIcon } from '@/assets/icons/StarIcon';
 import { TinderCatsIcon } from '@/assets/icons/TinderCatsIcon';
@@ -24,8 +26,10 @@ const iconRegistry = {
   user: UserIcon,
   'tinder-cats': TinderCatsIcon,
   star: StarIcon,
+  close: CloseIcon,
+  heart: HeartIcon,
 };
 
 type IconType = typeof iconRegistry;
 
-type IconName = keyof IconType;
+export type IconName = keyof IconType;
