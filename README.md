@@ -37,7 +37,8 @@ or
 - Expo
 - React Native
 - Typescript
-- React Query
+- Shopify Restyle (for styling)
+- React Query (for fetching data)
 
 ## Author 👨🏻‍💻
 
